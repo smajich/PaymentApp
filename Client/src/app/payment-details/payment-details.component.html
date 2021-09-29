@@ -11,6 +11,32 @@
     </div>
   </div>
   <div class="col-6">
-
+    <div class="card bg-light">
+      <div class="card-body">
+    <table class="table table-bordered  bg-white mb-0">
+      <thead>
+      <tr class="text-light text-center bg-secondary">
+        <th scope="col">Card Owner</th>
+        <th scope="col">Card Number</th>
+        <th scope="col">Exp. Date</th>
+        <th scope="col"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let pd of service.list" class="text-dark text-center">
+        <td (click)="populateForm(pd)">{{ pd.cardOwnerName }}</td>
+        <td (click)="populateForm(pd)">{{ pd.cardNumber }}</td>
+        <td (click)="populateForm(pd)">{{ pd.expirationDate }}</td>
+        <td class="d-flex justify-content-center">
+          <button class="btn btn-danger">
+          <i class="fas fa-trash-alt"></i>
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+      </div>
+    </div>
   </div>
 </div>
+
